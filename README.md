@@ -1,28 +1,26 @@
+<!-- @format -->
+# English README　[Jump to Japanese Version](#japanese)
+
+# Preview
+For an easy interaction with the contract use abi.ninja website.
+Here is a link to the contract loaded on it: [ERC20Token contract]()
+
+Click on function on the left to add them in the center of the page and interact with them.
+- Functions under the 'READ' category are for getting actual values.
+- Functions under the 'Write' category are for inserting new data.
+
+- NOTE: The above contract is deployed on the Sepolia Testnet, so testnet funds are required for interacting with it.
+
+
 # Foundry ERC20
 
-This is a section of the Cyfrin Foundry Solidity Course.
+Contract is deployed at xxxx
+[View on Sepolia]()
 
-*[⭐️ (7:08:04) | Lesson 10: Foundry ERC20](https://www.youtube.com/watch?v=sas02qSFZ74&t=25684s)*
+It is a contract thats create an ERC20 token. (Not by using the Openzeppelin Wizard tool)
 
-- [Foundry ERC20](#foundry-erc20)
-- [Getting Started](#getting-started)
-  - [Requirements](#requirements)
-  - [Quickstart](#quickstart)
-    - [Optional Gitpod](#optional-gitpod)
-- [Usage](#usage)
-  - [Start a local node](#start-a-local-node)
-  - [Deploy](#deploy)
-  - [Deploy - Other Network](#deploy---other-network)
-  - [Testing](#testing)
-    - [Test Coverage](#test-coverage)
-- [Deployment to a testnet or mainnet](#deployment-to-a-testnet-or-mainnet)
-  - [Scripts](#scripts)
-  - [Estimate gas](#estimate-gas)
-- [Formatting](#formatting)
-- [Thank you!](#thank-you)
-
-
-# Getting Started
+I used the 32 hours long video from Cyfrin Foundry Blockchain course to learn about Foundry.  
+[Cyfrin Foundry](https://github.com/Cyfrin/foundry-full-course-f23)
 
 ## Requirements
 
@@ -35,19 +33,12 @@ This is a section of the Cyfrin Foundry Solidity Course.
 ## Quickstart
 
 ```
-git clone https://github.com/Cyfrin/foundry-erc20-f23
-cd foundry-erc20-f23
+git clone https://github.com/Jer-B/Foundry_ERC20s
+cd Foundry_ERC20s
 forge install 
 forge build
 ```
 
-### Optional Gitpod
-
-If you can't or don't want to run and install locally, you can work with this repo in Gitpod. If you do this, you can skip the `clone this repo` part.
-
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#github.com/PatrickAlphaC/foundry-erc20-f23)
-
-# Usage
 
 ## OpenZeppelin
 
@@ -76,13 +67,9 @@ This will default to your local node. You need to have it running in another ter
 make deploy
 ```
 
-## Deploy - Other Network
-
-[See below](#deployment-to-a-testnet-or-mainnet)
 
 ## Testing
 
-We talk about 4 test tiers in the video. 
 
 1. Unit
 2. Integration
@@ -98,7 +85,7 @@ forge test
 or 
 
 ```
-forge test --fork-url $SEPOLIA_RPC_URL
+forge test --fork-url $alchemy_RPC_sepolia
 ```
 
 ### Test Coverage
@@ -112,11 +99,11 @@ forge coverage
 
 1. Setup environment variables
 
-You'll want to set your `SEPOLIA_RPC_URL` and `PRIVATE_KEY` as environment variables. You can add them to a `.env` file, similar to what you see in `.env.example`.
+You'll want to set your `alchemy_RPC_sepolia` and `PRIVATE_KEY_TESTNET` as environment variables. You can add them to a `.env` file, similar to what you see in `.env.example`.
 
-- `PRIVATE_KEY`: The private key of your account (like from [metamask](https://metamask.io/)). **NOTE:** FOR DEVELOPMENT, PLEASE USE A KEY THAT DOESN'T HAVE ANY REAL FUNDS ASSOCIATED WITH IT.
+- `PRIVATE_KEY_TESTNET`: The private key of your account (like from [metamask](https://metamask.io/)). **NOTE:** FOR DEVELOPMENT, PLEASE USE A KEY THAT DOESN'T HAVE ANY REAL FUNDS ASSOCIATED WITH IT.
   - You can [learn how to export it here](https://metamask.zendesk.com/hc/en-us/articles/360015289632-How-to-Export-an-Account-Private-Key).
-- `SEPOLIA_RPC_URL`: This is url of the sepolia testnet node you're working with. You can get setup with one for free from [Alchemy](https://alchemy.com/?a=673c802981)
+- `alchemy_RPC_sepolia`: This is url of the sepolia testnet node you're working with. You can get setup with one for free from [Alchemy](https://alchemy.com/?a=673c802981)
 
 Optionally, add your `ETHERSCAN_API_KEY` if you want to verify your contract on [Etherscan](https://etherscan.io/).
 
@@ -124,7 +111,7 @@ Optionally, add your `ETHERSCAN_API_KEY` if you want to verify your contract on 
 
 Head over to [faucets.chain.link](https://faucets.chain.link/) and get some testnet ETH. You should see the ETH show up in your metamask.
 
-2. Deploy
+3. Deploy
 
 ```
 make deploy ARGS="--network sepolia"
@@ -138,7 +125,7 @@ After deploy to a testnet or local net, you can run the scripts.
 Using cast deployed locally example: 
 
 ```
-cast send <ERC20_CONTRACT_ADDRESS> "transfer()"  --value 0.1ether --private-key <PRIVATE_KEY> --rpc-url $SEPOLIA_RPC_URL
+cast send <ERC20_CONTRACT_ADDRESS> "transfer()"  --value 0.1ether --private-key <PRIVATE_KEY> --rpc-url $alchemy_RPC_sepolia
 ```
 
 or, to create a ChainlinkVRF Subscription:
@@ -146,7 +133,6 @@ or, to create a ChainlinkVRF Subscription:
 ```
 make createSubscription ARGS="--network sepolia"
 ```
-
 
 ## Estimate gas
 
@@ -156,25 +142,178 @@ You can estimate how much gas things cost by running:
 forge snapshot
 ```
 
-And you'll see and output file called `.gas-snapshot`
-
+And you'll see an output file called `.gas-snapshot`
 
 # Formatting
 
-
 To run code formatting:
+
 ```
 forge fmt
 ```
 
 
-# Thank you!
 
-If you appreciated this, feel free to follow me or donate!
 
-ETH/Arbitrum/Optimism/Polygon/etc Address: 0x9680201d9c93d65a3603d2088d125e955c73BD65
+<a name="japanese"></a>
+# 日本語版のREADME
+# プレビュー
+コントラクトとの簡単な対話には abi.ninja ウェブサイトを使用してください。
+以下は、それにロードされたコントラクトへのリンクです: [ERC20Token contract]()
 
-[![Patrick Collins Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/PatrickAlphaC)
-[![Patrick Collins YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/channel/UCn-3f8tw_E1jZvhuHatROwA)
-[![Patrick Collins Linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/patrickalphac/)
-[![Patrick Collins Medium](https://img.shields.io/badge/Medium-000000?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@patrick.collins_58673/)
+左側の関数をクリックして、それらをページの中央に追加し、それらと対話します。
+- `READ`カテゴリーの下にある関数は実際の値を取得するためのものです。
+- `Write`カテゴリーの下にある関数は新しいデータを挿入するためのものです。
+
+- 注意: 上記のコントラクトは Sepolia テストネット上にデプロイされており、それと対話するにはテストネット用の資金が必要です。
+
+# Foundry ERC20
+
+
+このコントラクトは、0xxxx にデプロイされています。
+[Sepoliaで表示]()
+
+これは、Openzeppelin Wizardツールを使用せずにERC20トークンを作成するコントラクトです。
+
+Foundryを学ぶために、Cyfrin Foundry Blockchainコースの32時間の長いビデオを使用しました。
+[Cyfrin Foundry](https://github.com/Cyfrin/foundry-full-course-f23)
+
+## 必要条件
+
+- [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+  - git --version を実行して git version x.x.x のような応答が表示されれば成功です。
+- [foundry](https://getfoundry.sh/)
+  - forge --version を実行して forge 0.2.0 (816e00b 2023-03-16T00:05:26.396218Z) のような応答が表示されれば成功です
+
+
+## Quickstart
+
+```
+git clone https://github.com/Jer-B/Foundry_ERC20s
+cd Foundry_ERC20s
+forge install 
+forge build
+```
+
+
+## OpenZeppelin
+
+[OpenZeppelin Contracts ドキュメント](https://docs.openzeppelin.com/contracts/4.x/)
+<br><br>
+[OpenZeppelin GitHub　レポジトリー](https://github.com/OpenZeppelin/openzeppelin-contracts)
+<br>
+
+### OpenZeppelin コントラクト　パッケージ ライブラリのインストール
+
+```bash
+forge install OpenZeppelin/openzeppelin-contracts --no-commit
+```
+
+
+## ローカルノード(ブロックチェーン)を起動する
+
+```
+make anvil
+```
+
+## 使用方法
+
+デプロイメント:
+
+```
+make deploy
+```
+
+
+## テスト方法
+
+1. ユニットテスト
+2. 統合テスト
+3. フォークテスト
+4. ステージングテスト
+
+このリポジトリではテスト番号1と3をカバーしています。
+
+
+```
+forge test
+```
+
+or 
+
+```
+forge test --match-test testFunctionName
+```
+上記の testFunctionName を実際にテストしたいテスト関数の名前に変更しないでください。(test フォルダ内のファイルから関数を参照してください)
+
+or 
+
+```
+forge test --fork-url $alchemy_RPC_sepolia
+```
+
+### テストカバレッジ
+
+```
+forge coverage
+```
+
+# テストネットまたはメインネットへのデプロイ
+
+1. 環境変数の設定
+
+`alchemy_RPC_sepolia` と `PRIVATE_KEY_TESTNET` を環境変数として設定する必要があります。これらを .env ファイルに追加することができます。.env.example に示されているようなものです。
+
+
+- `PRIVATE_KEY_TESTNET`: アカウントのプライベートキー[metamask](https://metamask.io/)). **注意**: 開発のために、実際の資金が関連付けられていないキーを使用してください。
+
+  - [ここでキーのエクスポート方法を学ぶことができます](https://metamask.zendesk.com/hc/en-us/articles/360015289632-How-to-Export-an-Account-Private-Key).
+- `alchemy_RPC_sepolia`: これはあなたが作業している Sepolia テストネットノードのURLです。 [Alchemy](https://alchemy.com/?a=673c802981)　から無料でセットアップできます。
+
+オプションで、 [Etherscan](https://etherscan.io/)　で契約を検証したい場合は ETHERSCAN_API_KEY を追加してください。
+
+1. テストネットETHを取得
+
+ [faucets.chain.link](https://faucets.chain.link/) にアクセスし、テストネットETHを取得してください。MetamaskでETHが表示されるはずです。
+
+3. デプロイ
+
+```
+make deploy ARGS="--network sepolia"
+```
+
+
+## Scripts
+
+テストネットまたはローカルネットワークにデプロイした後、スクリプトを実行できます。
+
+ローカルにデプロイされたcastを使用する例：
+
+```
+cast send <ERC20_CONTRACT_ADDRESS> "transfer()"  --value 0.1ether --private-key <PRIVATE_KEY> --rpc-url $alchemy_RPC_sepolia
+```
+
+または、ChainlinkVRFサブスクリプションを作成するには：
+
+```
+make createSubscription ARGS="--network sepolia"
+```
+
+
+## ガス代確認
+
+
+```
+forge snapshot
+```
+
+`.gas-snapshot` という名前の出力ファイルが表示されます
+
+
+# フォーマット
+
+
+コードのフォーマットを実行するには：
+```
+forge fmt
+```
